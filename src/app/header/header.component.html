@@ -1,0 +1,15 @@
+<mat-toolbar color="primary">
+  <span><a routerLink="">Mis Publicaciones</a></span>
+  <span class="spacer"></span>
+  <ul>
+    <li *ngIf="userIsAuthenticated"> <a mat-button routerLink="/crear" routerLinkActive="mat-accent">Crear
+        Publicación</a></li>
+    <li *ngIf="!userIsAuthenticated"><a mat-button routerLink="/auth/ingresar"
+        routerLinkActive="mat-accent">Ingresar</a>
+    </li>
+    <li *ngIf="!userIsAuthenticated"><a mat-button routerLink="/auth/registrate"
+        routerLinkActive="mat-accent">Registrate</a>
+    </li>
+    <li *ngIf="userIsAuthenticated" (click)="onLogout()"><button mat-button>Salir</button></li>
+  </ul>
+</mat-toolbar>
